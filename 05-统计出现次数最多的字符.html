@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //有一个对象 判断是否具有该属性 对象名['属性名']
+        var obj = {
+            age: 18
+        }
+        if (obj['age']) {
+            console.log('有该属性');
+        } else {
+            console.log('没有该属性');
+        }
+        var str = 'abcdofaoghoaob';
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);//chars是字符串的每一个字符
+            if (o[chars]) {//o[chars] 判断字符串o里面有没有chars这个属性  返回值为true false
+                o[chars]++;//有 则令这个属性值+1
+            } else {
+                o[chars] = 1;//没有 则令这个属性值为1
+            }
+        }
+        console.log(o);
+        var max = 0;
+        var ch = '';
+        for (var k in o) {
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log('出现次数最多的是' + ch + '一共' + max + '次');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
